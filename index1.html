@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex Industrial | Precision Tile Displays</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #e67e22;
+            --light: #f8f9fa;
+            --dark: #1a252f;
+            --shadow: 0 15px 35px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--dark);
+            background-color: var(--light);
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #fff;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2c3e50 0%, #000000 100%);
+            color: white;
+        }
+
+        .hero h1 { font-size: 3rem; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; opacity: 0.8; max-width: 700px; margin: 0 auto 30px; }
+
+        /* Showcase Section */
+        .showcase {
+            padding: 60px 5%;
+            text-align: center;
+            background: white;
+        }
+
+        /* The Box Holding the Viewer */
+        .viewer-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 1100px;
+            margin: 0 auto;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            overflow: hidden; /* Keeps masks inside the rounded corners */
+            background: #fff;
+            box-shadow: var(--shadow);
+        }
+
+        /* MASK 1: Hides Top Left Logo/Text */
+        .logo-masker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 400px; /* Adjust if filename is long */
+            height: 45px;
+            background: white;
+            z-index: 10;
+        }
+
+        /* MASK 2: Hides Sidebar Configuration Button */
+        .sidebar-masker {
+            position: absolute;
+            top: 45px;
+            left: 0;
+            width: 50px;
+            height: 50px;
+            background: white;
+            z-index: 10;
+        }
+
+        /* Custom Branding placed over the Top Left mask */
+        .custom-brand-overlay {
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            z-index: 20;
+            background: #f8f9fa;
+            padding: 4px 12px;
+            border-radius: 4px;
+            border: 1px solid #e0e0e0;
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--primary);
+        }
+
+        .iframe-container {
+            width: 100%;
+            height: 600px;
+            position: relative;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Features Section */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 60px 5%;
+            background: #f8f9fa;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .feature-card h3 { color: var(--accent); margin-bottom: 10px; }
+
+        footer {
+            background: var(--primary);
+            color: #999;
+            padding: 30px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-text">APEX INDUSTRIAL</div>
+        <nav>
+            <a href="#">HOME</a>
+            <a href="#showcase">3D VIEWER</a>
+            <a href="#features">SPECS</a>
+            <a href="#">CONTACT</a>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <h1>Vitrified Tile Solutions</h1>
+        <p>Industrial grade display fixtures designed for high-traffic showrooms. Inspect our latest chamfill design in full 3D below.</p>
+    </div>
+
+    <div id="showcase" class="showcase">
+        <h2>Interactive 3D Engineering Model</h2>
+        
+        <div class="viewer-wrapper">
+            <!-- The Branding Overlay -->
+            <div class="custom-brand-overlay">
+                <span style="color: var(--accent);">●</span> APEX LIVE VIEW
+            </div>
+
+            <!-- The Masks -->
+            <div class="logo-masker"></div>
+            <div class="sidebar-masker"></div>
+
+            <!-- The Viewer -->
+            <div class="iframe-container">
+                <iframe src="clak - VITRIFIED - chamfill.html"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="features" class="features">
+        <div class="feature-card">
+            <h3>Precision Fit</h3>
+            <p>Laser-cut components ensuring sub-millimeter accuracy in every assembly.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Durable Finish</h3>
+            <p>Powder-coated industrial steel designed to withstand showroom wear and tear.</p>
+        </div>
+        <div class="feature-card">
+            <h3>Modular Design</h3>
+            <p>Easily swap components to fit different tile dimensions and showroom layouts.</p>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Apex Industrial Displays | Production Engineering Excellence
+    </footer>
+
+</body>
+</html>
